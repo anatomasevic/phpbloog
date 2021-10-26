@@ -1,47 +1,45 @@
-<?php include('header.php');?> 
-<div class ="content">
-    <table class="table">
-        <thread>
-            <th>Redni br.</th>
-            <th>Ime</th>
-            <th>Email</th>
-            <th>Poruka</th>
-            <th>Datum</th>
-            <th>Odgovor</th>
-</thread>
-<tbody id = "content">
-</tbody>
-</table 
+<?php include('header.php');?>
+    
+    <div class="container">
+        <div class="form-group">
+            <label>Ime</label>
+            <input type="text" name="name" id="name" class="form-control">
 </div>
+<div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" id="email" class="form-control">
+</div>
+<div class="form-group">
+            <label>Poruka</label>
+            <input type="text" name="message" id="message" class="form-control">
+</div>
+<div class="form-group">
+            
+            <input type="submit"  name="submit" id="submit" class="btn btn-primary">
+</div>
+</div>
+  
+<?php include('footer.php');?>
 
 <script type="text/javascript">
-$(document).ready(function(){
 
-load();
-
-});
-function load(){
+$("#submit").click(function(){
+    var name =$("#name").val();
+    var email =$("#email").val();
+    var message =$("#message").val();
+     
     $.ajax({
-    url:"contact_ajax.php",
-    type:"POST",
-    data:"html",
-    success:function(data){
-        $("#content").html(data);
-    }
-});
-}
+        url:"ajax.php",
+        type:"POST",
+        data:{name:name,email:email,message:message},
+        success:function(data){
+            alert("Uspesno ubaceni podaci u bazu");
 
-function del(id){
-   // alert(id)
-    $.ajax({
-    url:"contact_ajax.php",
-    type:"POST",
-    data:{id:id},
-    success:function(data){
-       load();
-    }
-});
-}
+            $("#name").val();
+            $("email").val();
+            $("message").val();
+        }
 
+    });
+});
 </script>
-<?php include('footer.php');?> 

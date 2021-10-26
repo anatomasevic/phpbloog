@@ -1,153 +1,53 @@
-<?php include('header.php');
 
-?> 
-<div class ="content">
-    <table class="table">
-        <thread>
-            <th>Redni br.</th>
-            <th id ="naslov">Naslov</th>
-            <th id = "sadrzaj">Sadrzaj</th>
-           
-            <th>Datum</th>
-            <th>Obrisi</th>
-</thread>
-<tbody id = "content">
-</tbody>
-</table 
-</div>
+    <?php include('header.php');?>
+    <form action="" method="GET">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="input-group mb-3">
+                                        <select name="sort_numeric" class="form-control">
+                                           
+                                            <option value="najnoviji" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "najnoviji") { echo "selected"; } ?> > najnoviji</option>
+                                            <option value="njastariji" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "njastariji") { echo "selected"; } ?> > njastariji</option>
+                                        </select>
+                                        <button type="submit" class="input-group-text btn btn-primary" id="basic-addon2">
+                                            Sortiraj
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+    <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+    <?php 
 
-<!-- Modal -->
-<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Izmeni post</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <form method="post">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Naslov</label>
-    <input type="email" class="form-control" name="name" id="name" aria-describedby="emailHelp">
-
-    <input type="hidden" class="form-control" name="sifra" id="sifra" aria-describedby="emailHelp">
-
-</div>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Tekst</label>
-    <input type="email" class="form-control" name="coment" id="coment" aria-describedby="emailHelp">
-  </div>
- 
-  
-</form>
-      </div>
-      <div class="modal-footer">
-   
-        <button type="submit" name="submit" id="submit" class="btn btn-primary">Izmeni</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script type="text/javascript">
-$(document).ready(function(){
-
-load();
-
-});
-function load(){
-    $.ajax({
-    url:"home_ajax.php",
-    type:"POST",
-    data:"html",
-    success:function(data){
-        $("#content").html(data);
+$sort_option = "";
+if(isset($_GET['sort_numeric']))
+{
+    if($_GET['sort_numeric'] == "najnoviji"){
+        $sort_option = "ASC";
+    }elseif($_GET['sort_numeric'] == "njastariji"){
+        $sort_option = "DESC";
     }
-});
 }
-
-function del(id){
-   // alert(id)
-   var conf = confirm("Da li ste sigurni da zelite da obrisete post?");
-   if(conf){
-    $.ajax({
-    url:"home_ajax.php",
-    type:"POST",
-    data:{id:id},
-    success:function(data){
-       load();
-    }
-});
-}
-}
-/*function open(edit_id){
-    $('#Modal').modal('show')
-
-    $.ajax({
-    url:"home_ajax.php",
-    type:"POST",
-    data:{edit_id:edit_id},
-    success:function(data){
-          // load();
-     var obj = JSON.parse(data);
-     // alert(obj);
-      //$("#content").val(obj);
-    //  console.log(obj);
-     $("#content").val(obj);
-    }
-});
-}
-*/
-
-
-function edit(edit_id){
-    $('#Modal').modal('show')
-   // alert(id)
-    $.ajax({
-    url:"home_ajax.php",
-    type:"POST",
-    data:{edit_id:edit_id},
-    success:function(data){
-      // load();
-     var obj = JSON.parse(data);
-     // alert(obj);
-      //$("#content").val(obj);
-    //  console.log(obj);
-    $("#name").val(obj.naslov);
-    $("#coment").val(obj.tekst);
-    $('#sifra').val(obj.id);
-
-    }
-});
-}
-
-
-$("#submit").click(function(){
-    var name =$("#name").val();
-    var coment =$("#coment").val();
-    var sifra =$("#sifra").val();
-    alert(sifra);
-   
     
-
-    
-     
-     $.ajax({
-        url:"home_ajax.php",
-        type:"POST",
-        data:{name:name,coment:coment,sifra:sifra},
-        success:function(data){
-            alert("Uspesno ubaceni podaci u bazu");
-
-           
-        }
-
-    });
-   
-});
-</script>
-
-
-
-
-<?php include('footer.php');?> 
+    $select_post=mysqli_query($conn,"SELECT * FROM `post` ORDER by id $sort_option");
+            while($posts=mysqli_fetch_array($select_post)){
+                ?>
+       
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="onepost.php?id=<?php echo $posts['id']?>">
+                            <h2 class="post-title"><?php echo $posts['naslov']?></h2>
+                            <h3 class="post-subtitle"><?php echo $posts['tekst']?></h3>
+                        </a>
+                     <!--   <p class="post-meta">
+                            Posted by
+                            <a href="#!">Start Bootstrap</a>
+                            <?php echo $posts['datum']?>
+                        </p>-->
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <?php }?>
+    <?php include('footer.php');?> 
