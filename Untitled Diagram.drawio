@@ -1,1 +1,87 @@
-<mxfile host="app.diagrams.net" modified="2022-09-02T11:28:23.648Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="RejWo_qga6nK0eKcq_yE" version="20.2.8" type="github"><diagram id="C62X79YcPQKUkbeTNFrt" name="Page-1">jZJLb8IwDMc/TY+T+mDAma6MA2gHkNh2yxqTREqbKg203aefuyR9DCHtUtk/P1L/7SBJi/ZVk4ofFAUZxCFtg+QliOPFMsRvDzoLVuuFBUwLalE0gqP4BgddHbsKCvUs0SgljajmMFdlCbmZMaK1auZpFyXnr1aEwR045kTe07Oghlu6fg5HvgPBuH85Cl2kID7ZgZoTqpoJSrIgSbVSxlpFm4LstfO62Lrtg+jwYxpK85+C7OOQq83+dH0/v+1P/HN32q6eXJcbkVc3MBMmiJcSW26+NFqst9wEpvOyYGvcADqbhgsDx4rkfaTBG0DGTSHRi9AkdWXXchEt0KHVDbSB9uEk0aAP3hWoAozuMMUXLJyk3R+/mWzIIT5ZjmfE3QQbOo+yoeGU8+64od/Y5MyT7Ac=</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-09-02T11:37:59.469Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="TM0gTVtadV0H4XwN5sik" version="20.2.8" type="github">
+  <diagram id="C62X79YcPQKUkbeTNFrt" name="Page-1">
+    <mxGraphModel dx="767" dy="1307" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-1" value="Korisnik" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="290" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-2" value="Prijavljivanje na sistem" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="130" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-3" value="Registracija korisnika" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="180" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-5" value="Prikaz odgovora" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="310" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-6" value="Unos odgovora" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="430" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-7" value="Prikaz formi" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="430" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-8" value="Brisanje formi" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="340" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-9" value="Izmena formi" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="250" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-10" value="Pravljenje formi" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="150" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-12" value="" style="endArrow=none;html=1;rounded=0;exitX=0.711;exitY=0.05;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="KarkLA4Dr0Uli64Bh4ct-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="440" as="sourcePoint" />
+            <mxPoint x="210" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-13" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="KarkLA4Dr0Uli64Bh4ct-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="420" as="sourcePoint" />
+            <mxPoint x="180" y="340" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-14" value="" style="endArrow=none;html=1;rounded=0;exitX=0.94;exitY=0.73;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="KarkLA4Dr0Uli64Bh4ct-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="230" as="sourcePoint" />
+            <mxPoint x="180" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-15" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="KarkLA4Dr0Uli64Bh4ct-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="154.96000000000004" y="252" as="sourcePoint" />
+            <mxPoint x="240" y="250" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-16" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="KarkLA4Dr0Uli64Bh4ct-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="164.96000000000004" y="262" as="sourcePoint" />
+            <mxPoint x="290" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-17" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="KarkLA4Dr0Uli64Bh4ct-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="310" as="sourcePoint" />
+            <mxPoint x="260" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-18" value="" style="endArrow=none;html=1;rounded=0;exitX=0.021;exitY=0.343;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="KarkLA4Dr0Uli64Bh4ct-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="330" as="sourcePoint" />
+            <mxPoint x="270" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KarkLA4Dr0Uli64Bh4ct-19" value="" style="endArrow=none;html=1;rounded=0;exitX=0.242;exitY=0.085;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="KarkLA4Dr0Uli64Bh4ct-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="330" as="sourcePoint" />
+            <mxPoint x="260" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
